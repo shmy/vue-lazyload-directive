@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#5892fc">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="format-detection" content="telephone=no">
+  <title>Document</title>
+  <style>
+    html,
+    body,
+    #app {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      left: 0;
+      overflow: hidden;
+    }
+
+    #app {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header,
+    .footer {
+      height: 3rem;
+      background-color: #0af;
+    }
+
+    .flex-full {
+      height: 1px;
+      flex: 1;
+      overflow: auto;
+    }
+    .rows {
+      height: 8rem;
+      width: 100%;
+      white-space:nowrap;
+      overflow-x: auto;
+    }
+    .rows .cov {
+      display: inline-block;
+      width: 100%;
+    }
+    .cov{
+      width: 100%;
+      height: 8rem;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+  </style>
+  <script src="https://cdn.bootcss.com/vue/2.2.1/vue.min.js"></script>
+  <script src="../dist/vue-lazyload-plugin.min.js"></script>
+
+</head>
+
+<body>
+  <div id="app">
+    <div class="header"></div>
+    <div class="flex-full">
+      <div v-lazyload="image" class="cov" v-for="n of num" :key="n"></div>
+    </div>
+    <div class="rows">
+      <div v-lazyload="image" class="cov" v-for="n of num" :key="n"></div>
+    </div>
+    <div class="footer">
+      <button @click="add">add 10</button>
+      <button @click="change">change</button>
+    </div>
+  </div>
+
+  <script>
+    Vue.use(vueLazyloadPlugin, {
+      loading: "http://static.oschina.net/uploads/img/201409/26073953_DP0i.gif",
+      failed: "http://img.ea3w.com/380_500x375/379862.jpg"
+    });
+    new Vue({
+      el: "#app",
+      data () {
+        return {
+          image: "https://shmy.tech/img/avatar.jpg",
+          num: 10
+        };
+      },
+      methods: {
+        add () {
+          this.num += 10;
+        },
+        change () {
+          this.image = "https://vuefe.cn/images/logo.png"
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

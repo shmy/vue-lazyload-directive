@@ -1,0 +1,30 @@
+{
+  "name": "vue-lazyload-directive",
+  "version": "1.0.0",
+  "main": "dist/vue-lazyload-directive.common.js",
+  "description": "vue-lazyload-directive",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shmy/vue-lazyload-directive"
+  },
+  "keywords": [
+    "vue",
+    "vue-directive",
+    "vue-plugin",
+    "keep-scroll"
+  ],
+  "author": "shmy",
+  "license": "MIT",
+  "unpkg": "dist/vue-lazyload-directive.min.js",
+  "scripts": {
+    "build": "bili"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "bili": "^0.14.0",
+    "eslint": "^3.15.0",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.4.2",
+    "eslint-plugin-standard": "^2.0.1"
+  }
+}
