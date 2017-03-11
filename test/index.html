@@ -57,7 +57,7 @@
 
   </style>
   <script src="https://cdn.bootcss.com/vue/2.2.1/vue.min.js"></script>
-  <script src="../dist/vue-lazyload-plugin.min.js"></script>
+  <script src="../dist/vue-lazyload-directive.min.js"></script>
 
 </head>
 
@@ -77,7 +77,7 @@
   </div>
 
   <script>
-    Vue.use(vueLazyloadPlugin, {
+    Vue.use(vueLazyloadDirective, {
       loading: "http://static.oschina.net/uploads/img/201409/26073953_DP0i.gif",
       failed: "http://img.ea3w.com/380_500x375/379862.jpg"
     });
